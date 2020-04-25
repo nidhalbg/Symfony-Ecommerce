@@ -19,11 +19,14 @@ security:
         main:
             anonymous: ~
             logout: ~
+            # form_login:
+            #     login_path: login
+            #     check_path: login
             
             # guard:
             #     authenticators:
             #         - AppBundle\Security\TokenAuthenticator
             
-    access_control:
-        - { path: '^/login', roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: '^/', roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    # access_control:
+    #     - { path: '^/login', roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    #     - { path: '^/', roles: IS_AUTHENTICATED_ANONYMOUSLY }
