@@ -67,9 +67,20 @@ class DefaultController extends Controller
     /**
      * @Route("/login", name="login")
      */
-    public function authAction(Request $request)
+    public function loginAction(Request $request)
     {
-        return $this->render('default/login.html.twig');
+        $user = $this->getUser();
+        if ($user instanceof UserInterface) {
+            return $this->redirectToRoute('homepage');
+        }
+
+        /** @var AuthenticationException $exception */
+        $exception = $this->get('security.authentication_utils')
+                          ->getLastAuthenticationError();
+
+        return $this->render('default/login.html.twig', [
+            'error' => $exception ? $exception->getMessage() : NULL,
+        ]);
     }
 
 }
