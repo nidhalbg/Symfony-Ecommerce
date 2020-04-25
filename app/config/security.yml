@@ -9,7 +9,7 @@ security:
         # Simple example of loading users via Doctrine
         # To load users from somewhere else: http://symfony.com/doc/current/cookbook/security/custom_provider.html
         database_users:
-            entity: { class: AppBundle:User, property: username }
+            entity: { class: AppBundle:User, property: apiKey }
 
     firewalls:
         dev:

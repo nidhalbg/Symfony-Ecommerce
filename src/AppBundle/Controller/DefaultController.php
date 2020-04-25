@@ -64,4 +64,12 @@ class DefaultController extends Controller
         ]);
     }
 
+    /**
+     * @Route("/login", name="login")
+     */
+    public function authAction(Request $request)
+    {
+        return $this->render('default/login.html.twig');
+    }
+
 }
