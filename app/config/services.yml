@@ -12,3 +12,6 @@ services:
     AppBundle\DataFixtures\ProductFixtures:
         tags: [doctrine.fixture.orm]
         autowire: true
+
+    AppBundle\Security\TokenAuthenticator:
+        autowire: true

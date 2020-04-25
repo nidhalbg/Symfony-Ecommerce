@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class DefaultController extends Controller
 {
@@ -66,8 +67,18 @@ class DefaultController extends Controller
 
     /**
      * @Route("/login", name="login")
+     * @Method({"GET","HEAD"})
      */
     public function loginAction(Request $request)
+    {
+        return $this->render('default/login.html.twig');
+    }
+
+    /**
+     * @Route("/auth", name="auth")
+     * @Method({"POST"})
+     */
+    public function authAction(Request $request)
     {
         $user = $this->getUser();
         if ($user instanceof UserInterface) {
