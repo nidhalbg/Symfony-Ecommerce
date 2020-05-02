@@ -1,0 +1,5 @@
+product_api:
+    resource: AppBundle\Controller\ProductController
+    type: rest
+    name_prefix: api_product_
+    prefix: /v1

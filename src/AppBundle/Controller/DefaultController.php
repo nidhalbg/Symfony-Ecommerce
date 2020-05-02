@@ -37,7 +37,7 @@ class DefaultController extends Controller
         {
             $products = $productRepository->findAllOrderedByName();
         }
-
+        
         return $this->render('default/index.html.twig', [
             'products' => $products, 
             'productsSlider' => $productsSlider,
